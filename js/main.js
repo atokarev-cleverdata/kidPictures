@@ -43,12 +43,36 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		var span = text.childNodes[position];
 
 		span.textContent = letter;
-		span.style.color = (pictureName[position] == letter) ? 'black' : 'red';
+		if (pictureName[position] != letter) {
+			errorsCount++;
+			span.style.color = 'red';
+		}
+
 		position++;
 	};
 
-	window.addEventListener("keypress", function(event) {
-		onKeyPressed(event.key);
+	function handleBackSpace() {
+		if (position > 0) {
+			position--;
+			var text = document.getElementById("text");
+			var span = text.childNodes[position];
+			var existingLetter = span.textContent;
+			
+			if (existingLetter != pictureName[position]) {
+				errorsCount++;
+				span.style.color = 'black';
+			}
+
+			span.textContent = '_';
+		}
+	}
+
+	window.addEventListener("keydown", function(event) {
+		if (event.keyCode == 8) {
+			handleBackSpace();
+		} else {
+			onKeyPressed(event.key);
+		}
 	});
 
 	loadPicture();
