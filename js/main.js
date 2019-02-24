@@ -1,10 +1,4 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-	var pictures = [
-		'ВИННИПУХ.jpeg',
-		'ПЯТАЧОК.jpg',
-		 'СОВА.png'
-	];
-
 	var engKeys = "QWERTYUIOP[]ASDFGHJKL;'ZXCVBNM,."
 	var rusKeys = "ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ"
 
