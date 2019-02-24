@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 	var pictures = [
+		'ВИННИПУХ.jpeg',
 		'ПЯТАЧОК.jpg',
 		 'СОВА.png'
 	];
@@ -31,25 +32,38 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		}
 
 		text.innerHTML = blanks
+		position = 0;
+		errorsCount = 0;
+		document.getElementById("thumbsup").style.visibility = 'hidden';
 	};
 
 	function onKeyPressed(key) {
-		var letter = keyToLetter(key);
-		if (rusKeys.indexOf(letter) == -1) {
-			return;
+		if (position < pictureName.length) {
+			var letter = keyToLetter(key);
+			if (rusKeys.indexOf(letter) == -1) {
+				return;
+			}
+
+			var text = document.getElementById("text");
+			var span = text.childNodes[position];
+
+			span.textContent = letter;
+			if (pictureName[position] != letter) {
+				errorsCount++;
+				span.style.color = 'red';
+			}
+
+			position++;
+			checkSuccess();
 		}
-
-		var text = document.getElementById("text");
-		var span = text.childNodes[position];
-
-		span.textContent = letter;
-		if (pictureName[position] != letter) {
-			errorsCount++;
-			span.style.color = 'red';
-		}
-
-		position++;
 	};
+
+	function checkSuccess() {
+		if (position == pictureName.length && errorsCount == 0) {
+			document.getElementById("thumbsup").style.visibility = 'visible';
+			setTimeout(loadPicture, 5000)
+		}
+	}
 
 	function handleBackSpace() {
 		if (position > 0) {
@@ -59,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			var existingLetter = span.textContent;
 			
 			if (existingLetter != pictureName[position]) {
-				errorsCount++;
+				errorsCount--;
 				span.style.color = 'black';
 			}
 
