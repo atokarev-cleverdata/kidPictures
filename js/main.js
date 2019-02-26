@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 		pictureName = pictureFile.substring(0, pictureFile.indexOf('.'));
 
+		document.getElementById("caption").textContent = pictureName;
+
 		var text = document.getElementById("text");
 		var blanks = ""
 		for (var i = 0; i < pictureName.length; i++) {
