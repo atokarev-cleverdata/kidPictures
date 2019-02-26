@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		text.innerHTML = blanks
 		position = 0;
 		errorsCount = 0;
-		document.getElementById("thumbsup").style.visibility = 'hidden';
+		document.getElementById("thumbsup").style.display = 'none';
 	};
 
 	function onKeyPressed(key) {
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 	function checkSuccess() {
 		if (position == pictureName.length && errorsCount == 0) {
-			document.getElementById("thumbsup").style.visibility = 'visible';
+			document.getElementById("thumbsup").style.display = 'inline';
 			setTimeout(loadPicture, 5000)
 		}
 	}
