@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 	var engKeys = "QWERTYUIOP[]ASDFGHJKL;'ZXCVBNM,."
 	var rusKeys = "ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ"
+	var allowedSymbols = "- "
 
 	var pictureName = ""
 	var position = 0
@@ -41,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	function onKeyPressed(key) {
 		if (position < pictureName.length) {
 			var letter = keyToLetter(key);
-			if (rusKeys.indexOf(letter) == -1) {
+			if (rusKeys.indexOf(letter) == -1 && allowedSymbols.indexOf(letter) == -1) {
 				return;
 			}
 
