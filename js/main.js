@@ -17,9 +17,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		var picture = document.getElementById("picture");
 		picture.src = 'images/' + pictureFile;
 
-		pictureName = pictureFile.substring(0, pictureFile.indexOf('.'));
+		var hideCaption = pictureFile.startsWith("!");
+		var startPosition = hideCaption ? 1 : 0;
 
-		document.getElementById("caption").textContent = pictureName;
+		pictureName = pictureFile.substring(startPosition, pictureFile.indexOf('.'));
+
+		var caption = document.getElementById("caption");
+		caption.textContent = pictureName;
+		caption.style.display = hideCaption ? 'none' : 'block';
 
 		var text = document.getElementById("text");
 		var blanks = ""
