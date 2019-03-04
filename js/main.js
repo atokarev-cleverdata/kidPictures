@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-	var engKeys = "QWERTYUIOP[]ASDFGHJKL;'ZXCVBNM,."
-	var rusKeys = "ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ"
+	var engKeys = "QWERTYUIOP[]ASDFGHJKL;'ZXCVBNM,.`"
+	var rusKeys = "ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮЁ"
 	var allowedSymbols = "- "
 
 	var pictureName = ""
