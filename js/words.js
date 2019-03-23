@@ -1,12 +1,12 @@
 var game = function() {
 
-	var engKeys = "QWERTYUIOP[]ASDFGHJKL;'ZXCVBNM,.`"
-	var rusKeys = "ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮЁ"
-	var allowedSymbols = "- "
+	var engKeys = "QWERTYUIOP[]ASDFGHJKL;'ZXCVBNM,.`";
+	var rusKeys = "ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮЁ";
+	var allowedSymbols = "- ";
 
-	var pictureName = ""
-	var position = 0
-	var errorsCount = 0
+	var pictureName = "";
+	var position = 0;
+	var errorsCount = 0;
 
 	function keyToLetter(key) {
 		var upcaseKey = key.toUpperCase();
@@ -34,7 +34,7 @@ var game = function() {
 			blanks += "<span>_</span>"
 		}
 
-		text.innerHTML = blanks
+		text.innerHTML = blanks;
 		position = 0;
 		errorsCount = 0;
 	};

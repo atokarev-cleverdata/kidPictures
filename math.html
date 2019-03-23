@@ -7,9 +7,20 @@
 		body {
 			text-align: center;
 		}
+		#main-table {
+			margin-left: auto;
+			margin-right: auto;
+		}
 		#text {
 			font-size: 108pt;
 			letter-spacing: 15pt;
+		}
+		#text td {
+			padding: 15pt;
+		}
+		#pot-left, #pot-right {
+			padding: 0;
+			width: 220px;
 		}
 		#thumbsup {
 			display: none;
@@ -19,10 +30,24 @@
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-	<div id="text">8 + 6 = 14</div>
+	<table id="main-table">
+		<tr id="text">
+			<td id="num-left">8</td>
+			<td>+</td>
+			<td id="num-right">6</td>
+			<td>=</td>
+			<td id="num-sum">14</td>
+		</tr>
+		<tr>
+			<td id="pot-left"></td>
+			<td></td>
+			<td id="pot-right"></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
 	<div>
 		<img id="thumbsup" height="256" src="assets/thumbs-up.png">
 	</div>
-	<img src="assets/honeypot.png" height="70">
 </body>
 </html>
