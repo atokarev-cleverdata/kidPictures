@@ -1,6 +1,6 @@
 var game = function() {
 
-	var limit = 9;
+	var limit = 5;
 
 	var numLeft = 0;
 	var numRight = 0;
